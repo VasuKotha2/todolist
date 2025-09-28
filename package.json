@@ -1,0 +1,22 @@
+{
+  "name": "node-todos-app",
+  "version": "1.0.0",
+  "type": "commonjs",
+  "scripts": {
+    "build": "mkdir -p dist && cp -r src public package.json dist/",
+    "start": "node dist/src/server.js",
+    "dev": "NODE_ENV=development node src/server.js",
+    "test": "jest --runInBand --detectOpenHandles"
+  },
+  "dependencies": {
+    "express": "^4.19.0",
+    "pino": "^9.0.0",
+    "pino-http": "^10.0.0",
+    "prom-client": "^15.0.0",
+    "uuid": "^10.0.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.0.0"
+  }
+}
