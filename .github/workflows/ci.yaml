@@ -1,14 +1,12 @@
-name: CI
-on: [push, pull_request]
-
+name: Run CI Pipeline 
+on:
+  push:
 jobs:
-  test:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '22'
-      - run: npm ci
-      - run: npm test
+  cicd:
+    uses: VasuKotha2/ReusableWorkflows/.github/workflows/npm_docker.yaml@main
+    with:
+      NODE_VERSION: "21.0" 
+      NPM_DEPS_COMMAND: "npm install"
+      NPM_BUILD_COMMAND: "npm install; npm run build"
+      NPM_TEST_COMMAND: "npm install; npm test"
+    
