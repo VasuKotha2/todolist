@@ -1,4 +1,4 @@
-name: Run CI Pipeline
+name: Run CI Pipeline 
 on:
   push:
 jobs:
